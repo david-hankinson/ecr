@@ -1,6 +1,10 @@
+# Pycharm
+.idea
+
 # Local .terraform directories
 **/.terraform/*
 **/.terragrunt/*
+**/.terragrunt-*/*
 
 # .tfstate files
 *.tfstate
