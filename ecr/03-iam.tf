@@ -19,7 +19,7 @@ resource "aws_iam_role" "this" {
         Condition = {
           StringEquals = {
             "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-            "token.actions.githubusercontent.com:sub": "repo:${var.github_repo}/${var.ecr_repository_name}:ref:refs/heads/main"
+            "token.actions.githubusercontent.com:sub": "repo:david-hankinson/ecr:ref:refs/heads/main"
           }
         }
       }
