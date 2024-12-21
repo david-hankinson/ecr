@@ -30,7 +30,7 @@ jobs:
         with:
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           role-to-assume: arn:aws:iam::AWS_ACCOUNT_ID:role/GitHubActionsECRAdmin # Replace with your IAM role ARN
-          #aws-region: AWS_REGION # Replace with your AWS region
+          aws-region: env.AWS_REGION # Replace with your AWS region
 
 #      - name: Gruntwork Terragrunt
 #        uses: gruntwork-io/terragrunt-action@v2.1.4
