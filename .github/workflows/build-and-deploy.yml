@@ -10,8 +10,8 @@ permissions:
   contents: read
 
 jobs:
-  terraform-plan-apply:
-    name: Provision AWS Resources
+  terragrunt-plan-apply:
+    name: terragrunt-plan-apply
     runs-on: ubuntu-latest
 
     steps:
