@@ -13,13 +13,13 @@ resource "aws_iam_role" "this" {
       {
         Effect    = "Allow",
         Principal = {
-          Federated = aws_iam_openid_connect_provider.this.arn
+          Federated = "arn:aws:iam::891377081827:oidc-provider/token.actions.githubusercontent.com"
         },
         Action    = "sts:AssumeRoleWithWebIdentity",
         Condition = {
           StringEquals = {
             "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-            "token.actions.githubusercontent.com:sub": "repo:david-hankinson/ecr:ref:refs/heads/main"
+            "token.actions.githubusercontent.com:sub": "repo:david-hankinson/ecr:ref:*"
           }
         }
       }
