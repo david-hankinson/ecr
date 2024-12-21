@@ -3,7 +3,7 @@ module "ecr" {
 
   repository_name = var.ecr_repository_name
 
-  repository_read_write_access_arns = [aws_iam_role.this.id]
+  repository_read_write_access_arns = [aws_iam_role.this.arn]
   create_lifecycle_policy           = true
   repository_lifecycle_policy = jsonencode({
     rules = [
