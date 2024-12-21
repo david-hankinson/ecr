@@ -24,6 +24,7 @@ jobs:
         id: configure_aws
         uses: aws-actions/configure-aws-credentials@v3
         with:
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
           role-to-assume: arn:aws:iam::AWS_ACCOUNT_ID:role/GitHubActionsECRAdmin # Replace with your IAM role ARN
           aws-region: ca-central-1 # Replace with your AWS region
 
