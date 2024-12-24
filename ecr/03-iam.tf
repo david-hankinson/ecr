@@ -11,15 +11,15 @@ resource "aws_iam_role" "this" {
     Version = "2012-10-17",
     Statement = [
       {
-        Effect    = "Allow",
+        Effect = "Allow",
         Principal = {
           Federated = aws_iam_openid_connect_provider.this.arn
         },
-        Action    = "sts:AssumeRoleWithWebIdentity",
+        Action = "sts:AssumeRoleWithWebIdentity",
         Condition = {
           StringEquals = {
-            "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-            "token.actions.githubusercontent.com:sub": "repo:david-hankinson/ecr:ref:*" # TODO
+            "token.actions.githubusercontent.com:aud" : "sts.amazonaws.com",
+            "token.actions.githubusercontent.com:sub" : "repo:david-hankinson/ecr:ref:*" # TODO
           }
         }
       }
@@ -33,8 +33,8 @@ resource "aws_iam_policy" "this" {
     Version = "2012-10-17",
     Statement = [
       {
-        Effect   = "Allow",
-        Action   = "ecr:*", # All ECR actions (modify based on requirements)
+        Effect = "Allow",
+        Action = "ecr:*", # All ECR actions (modify based on requirements)
         Resource = [
           data.aws_ecr_repository.this.arn # ECR repository ARN
         ]
