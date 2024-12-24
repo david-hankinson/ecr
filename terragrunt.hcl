@@ -1,12 +1,5 @@
 terraform {
-  source = "./ecr"
-}
-
-inputs = {
-  # Environment
-  env = "dev"
-  ecr_repository_name = "ecr-rails-bank-trx-reporting"
-  github_repo = "david-hankinson/rails-bank-trx-reporting"
+  source = "./ecr-module"
 }
 
 remote_state {
