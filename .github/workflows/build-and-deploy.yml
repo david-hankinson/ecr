@@ -42,6 +42,12 @@ jobs:
           tf_actions_subcommand: 'plan'
           args: '--terragrunt-non-interactive'
 
+      - name: 'Terragrunt Apply'
+        uses: the-commons-project/terragrunt-github-actions@master
+        with:
+          tf_actions_subcommand: 'apply'
+          args: '--terragrunt-non-interactive'
+
 
 #      - name: 'Terragrunt Apply'
 #        uses: the-commons-project/terragrunt-github-actions@master
