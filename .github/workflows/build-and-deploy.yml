@@ -39,7 +39,8 @@ jobs:
       - name: 'Terragrunt Plan'
         uses: the-commons-project/terragrunt-github-actions@master
         with:
-          tf_actions_subcommand: 'run-all apply --terragrunt-non-interactive'
+          tf_actions_subcommand: 'run-all apply'
+
 
 #      - name: 'Terragrunt Apply'
 #        uses: the-commons-project/terragrunt-github-actions@master
