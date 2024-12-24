@@ -1,5 +1,5 @@
 terraform {
-  source = "./ecr-module"
+  source = "."
 }
 
 remote_state {
