@@ -5,7 +5,7 @@ resource "aws_iam_openid_connect_provider" "this" {
 }
 
 resource "aws_iam_role" "this" {
-  name = "GitHubActionsECRAdmin"
+  name = "GitHubActionsECRAdmin" # TODO
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
@@ -19,7 +19,7 @@ resource "aws_iam_role" "this" {
         Condition = {
           StringEquals = {
             "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-            "token.actions.githubusercontent.com:sub": "repo:david-hankinson/ecr:ref:*"
+            "token.actions.githubusercontent.com:sub": "repo:david-hankinson/ecr:ref:*" # TODO
           }
         }
       }
@@ -36,8 +36,7 @@ resource "aws_iam_policy" "this" {
         Effect   = "Allow",
         Action   = "ecr:*", # All ECR actions (modify based on requirements)
         Resource = [
-          data.aws_ecr_repository.this.arn,                             # ECR repository ARN
-          "${data.aws_ecr_repository.this.arn}/*"                      # ECR repository images
+          data.aws_ecr_repository.this.arn # ECR repository ARN
         ]
       },
       {

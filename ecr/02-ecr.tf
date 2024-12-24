@@ -23,4 +23,5 @@ module "ecr" {
     ]
   })
   repository_force_delete = true
+  depends_on = [aws_iam_policy.this, aws_iam_role.this, aws_iam_role_policy_attachment.this, aws_iam_openid_connect_provider.this]
 }

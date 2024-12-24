@@ -42,6 +42,14 @@ jobs:
         run: |
           aws sts get-caller-identity
 
-#      - name: Gruntwork Terragrunt
-#        uses: gruntwork-io/terragrunt-action@v2.1.4
+      - name: 'Terragrunt Plan'
+        uses: the-commons-project/terragrunt-github-actions@master
+        with:
+          tf_actions_subcommand: 'plan'
+
+      - name: 'Terragrunt Apply'
+        uses: the-commons-project/terragrunt-github-actions@master
+        with:
+          tf_actions_subcommand: 'apply'
+
 
