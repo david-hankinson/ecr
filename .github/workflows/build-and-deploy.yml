@@ -19,24 +19,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-#      # Step 1: Checkout the repository
-#      - name: Checkout repository
-#        uses: actions/checkout@v3
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-#       Step 2: Configure AWS credentials using OIDC
-#      - name: Configure AWS credentials
-#        id: configure_aws
-#        uses: aws-actions/configure-aws-credentials@v3
-#        with:
-#          role-session-name: GitHub_to_AWS_via_FederatedOIDC
-#          role-to-assume: "arn:aws:iam::891377081827:oidc-provider/token.actions.githubusercontent.com" # Replace with your IAM role ARN
-#          aws-region: ca-central-1 # Replace with your AWS region
+      # Step 2: Configure AWS credentials using OIDC
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
           role-to-assume: arn:aws:iam::891377081827:role/GitHubActionsECRAdmin #change to reflect your IAM role’s ARN
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
+
       # Hello from AWS: WhoAmI
       - name: Sts GetCallerIdentity
         run: |
