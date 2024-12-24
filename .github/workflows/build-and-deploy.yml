@@ -40,7 +40,7 @@ jobs:
         uses: the-commons-project/terragrunt-github-actions@master
         with:
           tf_actions_subcommand: 'plan'
-          args: '-auto-approve'
+          args: '--terragrunt-non-interactive'
 
 
 #      - name: 'Terragrunt Apply'
