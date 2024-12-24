@@ -41,13 +41,6 @@ resource "aws_iam_policy" "this" {
       },
       {
         Effect   = "Allow",
-        Action   = "s3:*", # All ECR actions (modify based on requirements)
-        Resource = [
-          data.aws_ecr_repository.this.arn # ECR repository ARN
-        ]
-      },
-      {
-        Effect   = "Allow",
         Action   = ["ecr:GetAuthorizationToken"], # Auth for Docker CLI pulls/pushes
         Resource = "*"
       }
